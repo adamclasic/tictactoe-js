@@ -5,7 +5,7 @@
     border: 1px solid black;
     text-align: center;
     vertical-align: middle;
-    line-height: 50px;
+    line-height: 58px;
     font-size: 30px;
 }
 
@@ -15,4 +15,10 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
 }
