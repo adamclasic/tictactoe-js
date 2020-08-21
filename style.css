@@ -22,3 +22,10 @@
     width: 100%;
     display: flex;
 }
+
+.info {
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    vertical-align: middle;
+}

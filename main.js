@@ -22,9 +22,9 @@ let gameBoard = (player, location) => {
 
 let turn = (round) => {
     if (round%2 == 0){
-        return 'x';
+        return 'X';
     }else {
-        return 'o';
+        return 'O'; 
     }
 };
 
@@ -40,9 +40,30 @@ let move = (number, player) => {
     };
 };
 
+let win = (array) => {
+    let hasWon = false;
+    winComb.forEach((item) => {
+        let testArr = [];
+        for (let i = 0; i<item.length; i++) {
+            testArr.push(array[item[i]]);
+            // console.log(testArr);
+        };
+        if (testArr.every((x) => (x == 'X'))) {
+            hasWon =  true;
+        } else if (testArr.every((x) => (x == 'O'))) {
+            hasWon =  true;
+        }
+    });
+    return hasWon;
+};
+// alert()
+
 let round = 0;
 let game = (number) => {
-    // for (let k=0;k>i;i++) { }
     round++;
     move(number, turn(round));
+    if (win(board)) {
+        document.getElementById("info").innerText = `${turn(round)} Has Won The Game!`
+        document.getElementById('board').style.pointerEvents = 'none';
+    }
 }
