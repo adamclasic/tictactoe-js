@@ -9,7 +9,17 @@
 </head>
 <body>
 <main>
-    <div class="content">
+    <div class="flying">
+        <h1> welcom to TICTACTOE</h1>
+        <form id="nameForm" action="">
+            <label for="name1">player1</label>
+            <input id="name1" type="text">
+            <label for="name2">player2</label>
+            <input id="name2" type="text">
+            <input type="button" id="submitBtn" value="submit">
+        </form>
+    </div>
+    <div class="content d-none">
         <div id="board" class="board">
             <div class="pixel" onclick="game('0')"></div>
             <div class="pixel" onclick="game('1')"></div>
@@ -21,11 +31,12 @@
             <div class="pixel" onclick="game('7')"></div>
             <div class="pixel" onclick="game('8')"></div>
         </div>
-        <div class="info">
+        <div class="info d-none">
             <h1 id="info"></h1>
         </div>
-        <div class="footer">
-            <button id="replay" onClick="window.location.reload();" class="play-btn">play again</button>
+        <div class="footer d-none">
+            <button id="replay" onClick="replay();" class="play-btn">play again</button>
+            <button id="back" onClick="document.location.reload();" class="play-btn">back to menu</button>
         </div>
     </div>
 </main>

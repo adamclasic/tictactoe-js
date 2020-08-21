@@ -1,4 +1,4 @@
-const board = [null, null, null, null, null, null, null, null, null];
+let board = [null, null, null, null, null, null, null, null, null];
 let round = 0;
 const winComb = [
 	[0, 1, 2],
@@ -20,22 +20,32 @@ let gameBoard = (player, location) => {
     }
 };
 
+let names = ''
+document.getElementById("submitBtn").addEventListener("click", function(event){
+    event.preventDefault();
+    let name1 = document.getElementById("name1").value;
+    let name2 = document.getElementById("name2").value;
+    document.querySelector('.flying').style.display = 'none';
+    document.querySelector('.content').classList.toggle("d-none");
+    // document.querySelector('.content').style.display = 'unset';
+    names = [name1, name2];
+});
+
 let turn = (round) => {
     if (round%2 == 0){
-        return 'X';
+        return ['X', names[0]];
     }else {
-        return 'O'; 
+        return ['O', names[1]]; 
     }
 };
 
 let move = (number, player) => {
-    let roundNum = 0;
+    // let roundNum = 0;
     if (board.some((elem) => elem === null)) {
         if (board[number] === null) {
             gameBoard(player , number);
             return true;
         } else {
-            alert('choose empty spot');
             return false;
         };
     }else {
@@ -60,16 +70,35 @@ let win = (array) => {
 };
 
 let tie = (board) => {return !board.some((item) => (item == null))};
-let game = (number) => {
-    if (move(number, turn(round))){ round++;};
-    if (win(board)) {
-        document.getElementById("info").innerText = `${turn(round)} Has Won The Game!`
-        document.getElementById('board').style.pointerEvents = 'none';
-        document.getElementById('replay').style.display = 'unset';
-    }
-    if (tie(board)) {
-        document.getElementById('replay').style.display = 'unset';
-        document.getElementById("info").innerText = `It's a Tie Game!`
 
+let cleanBoard = () => {
+    document.querySelectorAll('div.pixel').forEach(
+        (element) => {element.innerText = ''}
+    );
+}
+
+let replay = () => {
+    cleanBoard();
+    document.querySelector('div.footer').classList.toggle("d-none");
+    document.querySelector('div.info').classList.toggle("d-none");
+    document.querySelector('#board').classList.toggle("ponter-none");
+    board = [null, null, null, null, null, null, null, null, null];
+};
+
+let game = (number) => {
+
+    if (move(number, turn(round)[0])){ round++;};
+    if (win(board)) {
+        document.getElementById("info").innerText = `${turn(round)[1].charAt(0).toUpperCase()+turn(round)[1].slice(1)} Has Won The Game!`
+        // document.getElementById('board').style.pointerEvents = 'none';
+        document.querySelector('div.footer').classList.toggle("d-none");
+        document.querySelector('div.info').classList.toggle("d-none");
+        document.querySelector('#board').classList.toggle("ponter-none");
+
+    }
+    if (!win(board) && tie(board)) {
+        document.querySelector('div.footer').classList.toggle("d-none");
+        document.querySelector('div.info').classList.toggle("d-none");
+        document.getElementById("info").innerText = `It's a Tie Game!`
     }
 }
