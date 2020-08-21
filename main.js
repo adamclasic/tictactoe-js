@@ -1,5 +1,5 @@
 const board = [null, null, null, null, null, null, null, null, null];
-
+let round = 0;
 const winComb = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -29,11 +29,14 @@ let turn = (round) => {
 };
 
 let move = (number, player) => {
+    let roundNum = 0;
     if (board.some((elem) => elem === null)) {
         if (board[number] === null) {
             gameBoard(player , number);
+            return true;
         } else {
             alert('choose empty spot');
+            return false;
         };
     }else {
         alert('tie reload to restart');
@@ -46,7 +49,6 @@ let win = (array) => {
         let testArr = [];
         for (let i = 0; i<item.length; i++) {
             testArr.push(array[item[i]]);
-            // console.log(testArr);
         };
         if (testArr.every((x) => (x == 'X'))) {
             hasWon =  true;
@@ -56,16 +58,18 @@ let win = (array) => {
     });
     return hasWon;
 };
-// alert()
 
-let round = 0;
+let tie = (board) => {return !board.some((item) => (item == null))};
 let game = (number) => {
-    round++;
-    move(number, turn(round));
+    if (move(number, turn(round))){ round++;};
     if (win(board)) {
         document.getElementById("info").innerText = `${turn(round)} Has Won The Game!`
         document.getElementById('board').style.pointerEvents = 'none';
         document.getElementById('replay').style.display = 'unset';
+    }
+    if (tie(board)) {
+        document.getElementById('replay').style.display = 'unset';
+        document.getElementById("info").innerText = `It's a Tie Game!`
 
     }
 }
