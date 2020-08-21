@@ -65,5 +65,7 @@ let game = (number) => {
     if (win(board)) {
         document.getElementById("info").innerText = `${turn(round)} Has Won The Game!`
         document.getElementById('board').style.pointerEvents = 'none';
+        document.getElementById('replay').style.display = 'unset';
+
     }
 }

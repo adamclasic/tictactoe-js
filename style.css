@@ -29,3 +29,22 @@
     text-align: center;
     vertical-align: middle;
 }
+
+.play-btn {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.footer {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    bottom: 20px;
+}
+
+.footer > button {
+    font-size: 25px;
+    background-color: rgb(223, 83, 2);
+    display: none;
+}
