@@ -138,4 +138,4 @@ Give a ⭐️ if you like this project!
 [issues-url]: https://github.com/adamclasic/tictactoe-js/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/adam-allalou
-[product-screenshot]: images/screen.png
+[product-screenshot]: assets/images/screen.png
