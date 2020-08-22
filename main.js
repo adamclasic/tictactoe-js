@@ -97,8 +97,9 @@ let game = (number) => {
 
     }
     if (!win(board) && tie(board)) {
+        document.getElementById("info").innerText = `It's a Tie Game!`
         document.querySelector('div.footer').classList.toggle("d-none");
         document.querySelector('div.info').classList.toggle("d-none");
-        document.getElementById("info").innerText = `It's a Tie Game!`
+        document.querySelector('#board').classList.toggle("ponter-none");
     }
 }
