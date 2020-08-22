@@ -1,3 +1,11 @@
+body {
+    margin: 0;
+    /* background-image: ''; */
+    background-image: url("./assets/images/background.jpg");
+    background-repeat: repeat;
+    background-size: 500px;
+}
+
 button,
 input[type="button"] {
     color: black;
@@ -19,7 +27,16 @@ input[type="button"] {
     height: 186px;
     display: flex;
     flex-wrap: wrap;
+    background-color: white;
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid grey;
+}
+
+.board-cont {
+    display: flex;
     margin: auto;
+    
 }
 
 .content {
@@ -30,9 +47,18 @@ input[type="button"] {
 
 .info {
     width: 100%;
+    display: inline-block;
     position: fixed;
     text-align: center;
     vertical-align: middle;
+    
+}
+.info h1 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid grey;
+
 }
 
 .play-btn {
@@ -50,10 +76,68 @@ input[type="button"] {
 
 .footer > button {
     font-size: 25px;
-    background-color: rgb(223, 83, 2);
+    background-color: #fff;
     /* display: none; */
+    padding: 15px;
+    border-radius: 15px;
 }
 
+.flying {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.left {
+    height: 100vh;
+    width: 50vw;
+    background-color: black;
+}
+
+.h1-cont-left {
+    position: fixed;
+    top: 222px;
+    width: 50vw;
+}
+
+.left h1 {
+    text-align: end;
+    font-size: 70px;
+    color: white;
+    margin: 0;
+    margin-left: 16px;
+}
+
+.h1-cont-right {
+    position: relative;
+    top: 222px;
+    width: 50vw;
+    right: 0;
+}
+
+.right h1 {
+    text-align: start;
+    font-size: 70px;
+    color: black;
+    margin: 0 0 0 15px;
+}
+
+.left form {
+    position: fixed;
+    color: white;
+    margin: auto;
+    bottom: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.right {
+    height: 100vh;
+    width: 50vw;
+    background-color: white;
+}
 /* bootstrap styles  */
 
 .d-none {

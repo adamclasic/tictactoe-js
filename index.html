@@ -10,26 +10,43 @@
 <body>
 <main>
     <div class="flying">
-        <h1> welcom to TICTACTOE</h1>
-        <form id="nameForm" action="">
-            <label for="name1">player1</label>
-            <input id="name1" type="text">
-            <label for="name2">player2</label>
-            <input id="name2" type="text">
-            <input type="button" id="submitBtn" value="submit">
-        </form>
+        <div class="left">
+            <div class="h1-cont-left">
+                <h1>TicTac </h1>
+            </div>
+            <form id="nameForm" action="">
+                <div>
+                    <label for="name1">player1</label>
+                    <input id="name1" type="text">
+                </div>
+                <div>
+                    <label for="name2">player2</label>
+                    <input id="name2" type="text">
+                </div>
+                <div>
+                    <input type="button" id="submitBtn" value="submit">
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="h1-cont-right">
+                <h1> Toe.</h1>
+            </div>
+        </div>
     </div>
     <div class="content d-none">
-        <div id="board" class="board">
-            <div class="pixel" onclick="game('0')"></div>
-            <div class="pixel" onclick="game('1')"></div>
-            <div class="pixel" onclick="game('2')"></div>
-            <div class="pixel" onclick="game('3')"></div>
-            <div class="pixel" onclick="game('4')"></div>
-            <div class="pixel" onclick="game('5')"></div>
-            <div class="pixel" onclick="game('6')"></div>
-            <div class="pixel" onclick="game('7')"></div>
-            <div class="pixel" onclick="game('8')"></div>
+        <div class="board-cont">
+            <div id="board" class="board">
+                <div class="pixel" onclick="game('0')"></div>
+                <div class="pixel" onclick="game('1')"></div>
+                <div class="pixel" onclick="game('2')"></div>
+                <div class="pixel" onclick="game('3')"></div>
+                <div class="pixel" onclick="game('4')"></div>
+                <div class="pixel" onclick="game('5')"></div>
+                <div class="pixel" onclick="game('6')"></div>
+                <div class="pixel" onclick="game('7')"></div>
+                <div class="pixel" onclick="game('8')"></div>
+            </div>
         </div>
         <div class="info d-none">
             <h1 id="info"></h1>
