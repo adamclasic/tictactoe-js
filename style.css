@@ -4,6 +4,7 @@ body {
     background-image: url("./assets/images/background.jpg");
     background-repeat: repeat;
     background-size: 500px;
+    font-family: sans-serif;
 }
 
 button,
@@ -54,6 +55,8 @@ input[type="button"] {
     
 }
 .info h1 {
+    margin: auto;
+    width: 80%;
     background-color: white;
     padding: 20px;
     border-radius: 22px;
@@ -80,6 +83,14 @@ input[type="button"] {
     /* display: none; */
     padding: 15px;
     border-radius: 15px;
+}
+
+label {
+    font-size: 25px;
+}
+
+form input {
+    font-size: 25px;
 }
 
 .flying {
@@ -122,15 +133,35 @@ input[type="button"] {
     margin: 0 0 0 15px;
 }
 
-.left form {
+.left .form-cont {
     position: fixed;
-    color: white;
+    color: black;
     margin: auto;
     bottom: 50px;
     width: 100vw;
     display: flex;
     justify-content: center;
 
+}
+
+.left form {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.left form > div {
+    margin: 20px;
+}
+
+#submitBtn {
+    font-size: 25px;
+    background-color: #fff;
+    /* display: none; */
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
 }
 
 .right {
