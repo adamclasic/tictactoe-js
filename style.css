@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    /* background-image: ''; */
     background-image: url("./assets/images/background.jpg");
     background-repeat: repeat;
     background-size: 500px;
@@ -13,19 +12,19 @@ input[type="button"] {
 }
 
 .pixel {
-    height: 60px;
-    width: 60px;
+    height: 120px;
+    width: 120px;
     color: #aaa;
     border: 1px solid black;
     text-align: center;
     vertical-align: middle;
-    line-height: 58px;
-    font-size: 30px;
+    line-height: 120px;
+    font-size: 60px;
 }
 
 .board {
-    width: 186px;
-    height: 186px;
+    width: 366px;
+    height: 366px;
     display: flex;
     flex-wrap: wrap;
     background-color: white;
@@ -158,7 +157,6 @@ form input {
 #submitBtn {
     font-size: 25px;
     background-color: #fff;
-    /* display: none; */
     padding: 15px;
     border-radius: 15px;
     width: 100%;
@@ -169,12 +167,13 @@ form input {
     width: 50vw;
     background-color: white;
 }
+
 /* bootstrap styles  */
 
 .d-none {
     display: none;
 }
 
-.ponter-none {
+.pointer-none {
     pointer-events: none;
 }

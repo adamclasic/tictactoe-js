@@ -40,7 +40,6 @@ let turn = (round) => {
 };
 
 let move = (number, player) => {
-    // let roundNum = 0;
     if (board.some((elem) => elem === null)) {
         if (board[number] === null) {
             gameBoard(player , number);
@@ -48,9 +47,7 @@ let move = (number, player) => {
         } else {
             return false;
         };
-    }else {
-        alert('tie reload to restart');
-    };
+    }
 };
 
 let win = (array) => {
@@ -85,9 +82,7 @@ let replay = () => {
     board = [null, null, null, null, null, null, null, null, null];
 };
 
-let game = (number) => {
-
-    if (move(number, turn(round)[0])){ round++;};
+let render = () => {
     if (win(board)) {
         document.getElementById("info").innerText = `${turn(round)[1].charAt(0).toUpperCase()+turn(round)[1].slice(1)} Has Won The Game!`
         // document.getElementById('board').style.pointerEvents = 'none';
@@ -102,4 +97,10 @@ let game = (number) => {
         document.querySelector('div.info').classList.toggle("d-none");
         document.querySelector('#board').classList.toggle("ponter-none");
     }
+}
+
+let game = (number) => {
+
+    if (move(number, turn(round)[0])){ round++;};
+    render();
 }
