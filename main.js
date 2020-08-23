@@ -69,6 +69,7 @@ const cleanBoard = () => {
   document.querySelectorAll('div.pixel').forEach(
     (element) => { element.innerText = ''; },
   );
+  board = [null, null, null, null, null, null, null, null, null];
 };
 
 /* eslint no-unused-vars: "off" */
@@ -77,8 +78,7 @@ const replay = () => {
   cleanBoard();
   document.querySelector('div.footer').classList.toggle('d-none');
   document.querySelector('div.info').classList.toggle('d-none');
-  document.querySelector('#board').classList.toggle('ponter-none');
-  board = [null, null, null, null, null, null, null, null, null];
+  document.querySelector('.board-cont').classList.toggle('pointer-none');
 };
 
 const render = () => {
@@ -86,13 +86,13 @@ const render = () => {
     document.getElementById('info').innerText = `${turn(round)[1].charAt(0).toUpperCase() + turn(round)[1].slice(1)} Has Won The Game!`;
     document.querySelector('div.footer').classList.toggle('d-none');
     document.querySelector('div.info').classList.toggle('d-none');
-    document.querySelector('#board').classList.toggle('ponter-none');
+    document.querySelector('.board-cont').classList.toggle('pointer-none');
   }
   if (!win(board) && tie(board)) {
     document.getElementById('info').innerText = 'It\'s a Tie Game!';
     document.querySelector('div.footer').classList.toggle('d-none');
     document.querySelector('div.info').classList.toggle('d-none');
-    document.querySelector('#board').classList.toggle('ponter-none');
+    document.querySelector('.board-cont').classList.toggle('pointer-none');
   }
 };
 

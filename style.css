@@ -27,15 +27,20 @@ input[type="button"] {
   height: 366px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.board-cont {
+  /* display: flex; */
+  margin: auto;
   background-color: white;
   padding: 20px;
   border-radius: 22px;
   border: 1px solid grey;
 }
 
-.board-cont {
-  display: flex;
-  margin: auto;
+.board-cont button {
+width: 100%;
+margin-top: 20px;
 }
 
 .content {
@@ -68,17 +73,11 @@ input[type="button"] {
 }
 
 .footer {
+  justify-content: space-evenly;
   display: flex;
   position: fixed;
   width: 100%;
-  bottom: 20px;
-}
-
-.footer > button {
-  font-size: 25px;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 15px;
+  bottom: 30px;
 }
 
 label {
@@ -151,11 +150,14 @@ form input {
 }
 
 #submitBtn {
+  width: 100%;
+}
+
+.btn {
   font-size: 25px;
   background-color: #fff;
   padding: 15px;
   border-radius: 15px;
-  width: 100%;
 }
 
 .right {
