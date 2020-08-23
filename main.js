@@ -11,15 +11,14 @@ const winComb = [
   [6, 4, 2],
 ];
 
-let names = '';
+let names = [];
 
 document.getElementById('submitBtn').addEventListener('click', (event) => {
   event.preventDefault();
-  const name1 = document.getElementById('name1').value;
-  const name2 = document.getElementById('name2').value;
+  names[0] = document.getElementById('name1').value;
+  names[1] = document.getElementById('name2').value;
   document.querySelector('.flying').style.display = 'none';
   document.querySelector('.content').classList.toggle('d-none');
-  names = [name1, name2];
 });
 
 
@@ -32,13 +31,14 @@ function Player() {
       array: board,
     };
   };
+
   const turn = (round) => {
     if (round % 2 === 0) {
       return ['X', names[0]];
     }
     return ['O', names[1]];
   };
-  
+
   const validMove = (number, player) => {
     if (board.some((elem) => elem === null)) {
       if (board[number] === null) {
