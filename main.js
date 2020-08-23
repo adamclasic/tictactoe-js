@@ -11,7 +11,7 @@ const winComb = [
   [6, 4, 2],
 ];
 
-let names = [];
+const names = [];
 
 document.getElementById('submitBtn').addEventListener('click', (event) => {
   event.preventDefault();
@@ -51,10 +51,10 @@ function Player() {
 
   return {
     turn,
-    validMove
-  }
+    validMove,
+  };
 }
-let playerr = Player();
+const playerr = Player();
 
 function GameBoard() {
   const win = (array) => {
@@ -72,9 +72,9 @@ function GameBoard() {
     });
     return hasWon;
   };
-  
+
   const tie = (board) => !board.some((item) => (item === null));
-  
+
   const cleanBoard = () => {
     document.querySelectorAll('div.pixel').forEach(
       (element) => { element.innerText = ''; },
@@ -88,33 +88,31 @@ function GameBoard() {
     document.querySelector('div.info').classList.toggle('d-none');
     document.querySelector('.board-cont').classList.toggle('pointer-none');
   };
-  
-  let render = () => {
-        if (win(board)) {
-          document.getElementById('info').innerText = `${playerr.turn(round)[1].charAt(0).toUpperCase() + playerr.turn(round)[1].slice(1)} Has Won The Game!`;
-          document.querySelector('div.footer').classList.toggle('d-none');
-          document.querySelector('div.info').classList.toggle('d-none');
-          document.querySelector('.board-cont').classList.toggle('pointer-none');
-        }
-        if (!win(board) && tie(board)) {
-          document.getElementById('info').innerText = 'It\'s a Tie Game!';
-          document.querySelector('div.footer').classList.toggle('d-none');
-          document.querySelector('div.info').classList.toggle('d-none');
-          document.querySelector('.board-cont').classList.toggle('pointer-none');
-        }
+
+  const render = () => {
+    if (win(board)) {
+      document.getElementById('info').innerText = `${playerr.turn(round)[1].charAt(0).toUpperCase() + playerr.turn(round)[1].slice(1)} Has Won The Game!`;
+      document.querySelector('div.footer').classList.toggle('d-none');
+      document.querySelector('div.info').classList.toggle('d-none');
+      document.querySelector('.board-cont').classList.toggle('pointer-none');
+    }
+    if (!win(board) && tie(board)) {
+      document.getElementById('info').innerText = 'It\'s a Tie Game!';
+      document.querySelector('div.footer').classList.toggle('d-none');
+      document.querySelector('div.info').classList.toggle('d-none');
+      document.querySelector('.board-cont').classList.toggle('pointer-none');
+    }
   };
 
-  let game = (number) => {
+  const game = (number) => {
     if (playerr.validMove(number, playerr.turn(round)[0])) { round += 1; }
     render();
-  }
+  };
 
-  return {cleanBoard, replay, game};
-
+  return { cleanBoard, replay, game };
 }
 
-let gameLogic = GameBoard();
+const gameLogic = GameBoard();
 
 
 /* eslint no-unused-vars: "off" */
-
