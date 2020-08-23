@@ -56,7 +56,7 @@ function Player() {
 }
 let playerr = Player();
 
-function GameLogic() {
+function GameBoard() {
   const win = (array) => {
     let hasWon = false;
     winComb.forEach((item) => {
@@ -104,17 +104,17 @@ function GameLogic() {
         }
   };
 
-  return {cleanBoard, render, replay};
+  let game = (number) => {
+    if (playerr.validMove(number, playerr.turn(round)[0])) { round += 1; }
+    render();
+  }
+
+  return {cleanBoard, replay, game};
 
 }
 
-let gameLogic = GameLogic();
+let gameLogic = GameBoard();
 
 
 /* eslint no-unused-vars: "off" */
 
-
-let game = (number) => {
-  if (playerr.validMove(number, playerr.turn(round)[0])) { round += 1; }
-  gameLogic.render();
-}
