@@ -48,17 +48,17 @@
                 <div class="pixel" onclick="game('7')"></div>
                 <div class="pixel" onclick="game('8')"></div>
             </div>
-            <button class="btn" onclick="cleanBoard()">rest</button>
+            <button class="btn" onclick="gameLogic.cleanBoard()">rest</button>
         </div>
         <div class="info d-none">
             <h1 id="info"></h1>
         </div>
         <div class="footer d-none">
-            <button class="btn" id="replay" onClick="replay();" class="play-btn">play again</button>
+            <button class="btn" id="replay" onClick="gameLogic.replay();" class="play-btn">play again</button>
             <button class="btn" id="back" onClick="document.location.reload();" class="play-btn">back to menu</button>
         </div>
     </div>
 </main>
-<script src="main.js"></script>
+<script src="./scripts/main.js"></script>
 </body>
 </html>

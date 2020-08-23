@@ -14,7 +14,7 @@ input[type="button"] {
 .pixel {
   height: 120px;
   width: 120px;
-  color: #aaa;
+  color: rgb(41, 41, 41);
   border: 1px solid black;
   text-align: center;
   vertical-align: middle;
@@ -30,7 +30,6 @@ input[type="button"] {
 }
 
 .board-cont {
-  /* display: flex; */
   margin: auto;
   background-color: white;
   padding: 20px;
@@ -39,8 +38,8 @@ input[type="button"] {
 }
 
 .board-cont button {
-width: 100%;
-margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .content {
