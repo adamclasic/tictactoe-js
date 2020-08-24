@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  background-image: url("./assets/images/background.jpg");
+  background-repeat: repeat;
+  background-size: 500px;
+  font-family: sans-serif;
+}
+
+button,
+input[type="button"] {
+  color: black;
+}
+
+.pixel {
+  height: 120px;
+  width: 120px;
+  color: rgb(41, 41, 41);
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 120px;
+  font-size: 60px;
+}
+
+.board {
+  width: 366px;
+  height: 366px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board-cont {
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 22px;
+  border: 1px solid grey;
+}
+
+.board-cont button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.content {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.info {
+  width: 100%;
+  display: inline-block;
+  position: fixed;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.info h1 {
+  margin: auto;
+  width: 80%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 22px;
+  border: 1px solid grey;
+}
+
+.play-btn {
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+}
+
+.footer {
+  justify-content: space-evenly;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 30px;
+}
+
+label {
+  font-size: 25px;
+}
+
+form input {
+  font-size: 25px;
+}
+
+.flying {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.left {
+  height: 100vh;
+  width: 50vw;
+  background-color: black;
+}
+
+.h1-cont-left {
+  position: fixed;
+  top: 222px;
+  width: 50vw;
+}
+
+.left h1 {
+  text-align: end;
+  font-size: 70px;
+  color: white;
+  margin: 0;
+  margin-left: 16px;
+}
+
+.h1-cont-right {
+  position: relative;
+  top: 222px;
+  width: 50vw;
+  right: 0;
+}
+
+.right h1 {
+  text-align: start;
+  font-size: 70px;
+  color: black;
+  margin: 0 0 0 15px;
+}
+
+.left .form-cont {
+  position: fixed;
+  color: black;
+  margin: auto;
+  bottom: 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.left form {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.left form > div {
+  margin: 20px;
+}
+
+#submitBtn {
+  width: 100%;
+}
+
+.btn {
+  font-size: 25px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.right {
+  height: 100vh;
+  width: 50vw;
+  background-color: white;
+}
+
+/* bootstrap styles  */
+
+.d-none {
+  display: none;
+}
+
+.pointer-none {
+  pointer-events: none;
+}
