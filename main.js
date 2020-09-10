@@ -1,3 +1,4 @@
+let Player = require( './scripts/player');
 let board = [null, null, null, null, null, null, null, null, null];
 let round = 0;
 const winComb = [
@@ -22,38 +23,6 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
 });
 
 
-function Player() {
-  const person = (player, location) => {
-    location = parseInt(location, 10);
-    board[location] = player;
-    document.getElementById('board').children[location].innerText = player;
-    return {
-      array: board,
-    };
-  };
-
-  const turn = (round) => {
-    if (round % 2 === 0) {
-      return ['X', names[0]];
-    }
-    return ['O', names[1]];
-  };
-
-  const validMove = (number, player) => {
-    if (board.some((elem) => elem === null)) {
-      if (board[number] === null) {
-        person(player, number);
-        return true;
-      }
-    }
-    return false;
-  };
-
-  return {
-    turn,
-    validMove,
-  };
-}
 const playerr = Player();
 
 function GameBoard() {
@@ -116,3 +85,5 @@ const gameLogic = GameBoard();
 
 
 /* eslint no-unused-vars: "off" */
+
+// export { winComb };
