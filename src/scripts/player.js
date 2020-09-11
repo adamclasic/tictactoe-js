@@ -1,7 +1,8 @@
 
 import {populateBoard} from './populateBoard';
+import {board} from '../index';
 
-  const Player = () => {
+  const Player = (names) => {
   const person = (player, location) => {
     location = parseInt(location, 10);
     populateBoard(location, player)
@@ -33,5 +34,4 @@ import {populateBoard} from './populateBoard';
     validMove,
   };
 }
-export default Player;
-module.exports = Player;
+export {Player};

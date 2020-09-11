@@ -1,4 +1,4 @@
-let Player = require( './scripts/player');
+import {Player} from './scripts/player';
 let board = [null, null, null, null, null, null, null, null, null];
 let round = 0;
 const winComb = [
@@ -23,7 +23,7 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
 });
 
 
-const playerr = Player();
+const playerr = Player(names);
 
 function GameBoard() {
   const win = (array) => {
@@ -81,9 +81,33 @@ function GameBoard() {
   return { cleanBoard, replay, game };
 }
 
+let boardElement = document.querySelector('#board');
+// console.log(boardElement.);
+// boardElement.forEach(console.log)
+
+boardElement.addEventListener('click', (e) => {
+    // gameLogic.game(id);
+    
+    gameLogic.game(e.target.attributes[1].nodeValue)
+});
+
+document.querySelector('#replay').addEventListener('click', () => {
+  gameLogic.replay()
+})
+
+document.querySelector('#back').addEventListener('click', () => {
+  document.location.reload()
+})
+
+document.querySelector('#restBtn').addEventListener('click', () => {
+  gameLogic.cleanBoard()
+  board = [null, null, null, null, null, null, null, null, null];
+})
+
+
 const gameLogic = GameBoard();
 
 
 /* eslint no-unused-vars: "off" */
 
-// export { winComb };
+export { board };

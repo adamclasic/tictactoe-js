@@ -2,4 +2,4 @@
 const populateBoard = (location, player) => {
   document.getElementById('board').children[location].innerText = player;
 }
-export default populateBoard;
+export {populateBoard};
