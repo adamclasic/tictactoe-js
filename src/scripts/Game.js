@@ -1,4 +1,3 @@
-import { populateBoard } from './populateBoard';
 import {turn} from './turn'
 function GameBoard(boardd) {
   let board = boardd;
@@ -6,7 +5,6 @@ function GameBoard(boardd) {
   let names = ['',''];
   const person = (player, location) => {
     location = parseInt(location, 10);
-    populateBoard(location, player);
     board[location] = player;
     return {
       array: board,
