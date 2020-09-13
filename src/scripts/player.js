@@ -1,6 +1,5 @@
 
 import { populateBoard } from './populateBoard';
-// import { board } from '../index';
 
 const Player = (names, board) => {
   const person = (player, location) => {
