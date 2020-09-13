@@ -1,5 +1,7 @@
 const cleanBoard = (board) => {
-  return board = [null, null, null, null, null, null, null, null, null];
+  let bboard = board;
+  bboard = [null, null, null, null, null, null, null, null, null];
+  return bboard;
 };
 
 export { cleanBoard };

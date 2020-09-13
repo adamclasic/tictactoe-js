@@ -1,10 +1,10 @@
-import {win} from './scripts/win'
-import {turn} from './scripts/turn'
-import {tie} from './scripts/tie'
-import {cleanBoard} from './scripts/cleanBoard'
-import {GameBoard} from './scripts/GameBoard'
+import { win } from './scripts/win';
+import { turn } from './scripts/turn';
+import { tie } from './scripts/tie';
+import { cleanBoard } from './scripts/cleanBoard';
+import { GameBoard } from './scripts/GameBoard';
 
-let gameLogic =  GameBoard([null, null, null, null, null, null, null, null, null]);
+let gameLogic = GameBoard([null, null, null, null, null, null, null, null, null]);
 
 document.getElementById('submitBtn').addEventListener('click', (event) => {
   event.preventDefault();
@@ -16,8 +16,7 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
 
 const render = () => {
   if (win(gameLogic.board)) {
-    document.getElementById('info').innerText = 
-    `${turn(gameLogic.round, gameLogic.names)[1].charAt(0).toUpperCase() + turn(gameLogic.round, gameLogic.names)[1].slice(1)} Has Won The Game!`;
+    document.getElementById('info').innerText = `${turn(gameLogic.round, gameLogic.names)[1].charAt(0).toUpperCase() + turn(gameLogic.round, gameLogic.names)[1].slice(1)} Has Won The Game!`;
     document.querySelector('div.footer').classList.toggle('d-none');
     document.querySelector('div.info').classList.toggle('d-none');
     document.querySelector('.board-cont').classList.toggle('pointer-none');
@@ -34,14 +33,13 @@ const cleanDomBoard = () => {
   document.querySelectorAll('div.pixel').forEach(
     (element) => { element.innerText = ''; },
   );
-}
+};
 
 const boardElement = document.querySelector('#board');
 
 boardElement.addEventListener('click', (e) => {
   gameLogic.game(e.target.attributes[1].nodeValue, gameLogic.board);
   render();
-
 });
 
 document.querySelector('#replay').addEventListener('click', () => {

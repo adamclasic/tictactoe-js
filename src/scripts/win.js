@@ -23,4 +23,4 @@ const win = (array) => {
   });
   return hasWon;
 };
-export {win};
+export { win };

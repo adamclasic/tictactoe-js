@@ -1,8 +1,9 @@
-import {turn} from './turn'
+import { turn } from './turn';
+
 function GameBoard(boardd) {
-  let board = boardd;
+  const board = boardd;
   let round = 0;
-  let names = ['',''];
+  const names = ['', ''];
   const person = (player, location) => {
     location = parseInt(location, 10);
     board[location] = player;
@@ -20,11 +21,13 @@ function GameBoard(boardd) {
     }
     return false;
   };
-  
+
   const game = (number, board) => {
     if (validMove(number, turn(round, names)[0], board)) { round += 1; }
   };
-  return { board, game, round, names};
+  return {
+    board, game, round, names,
+  };
 }
 
 export { GameBoard };
