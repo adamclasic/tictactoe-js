@@ -67,18 +67,21 @@ This is a simple game where two players can play against each other and try to o
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-- Code Editor
-- Browser
+#### Clone the repository to run the app.
 
-### Installation
+- $ `git clone git@github.com:adamclasic/tictactoe-js`
+- `cd` into the project directory
+- Run `npm install` to install the necessary modules
+- Run `npm run build` to automatically load the page on localhost:8080
+
+## Testing
  
-1. Clone the repo
+1. Run the tests
 ```sh
-git clone https://github.com/adamclasic/tictactoe-js.git
+npm run test
 ```
+
 
 
 <!-- USAGE EXAMPLES -->

@@ -1,0 +1,39 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "[![Contributors][contributors-shield]][contributors-url]\r [![Forks][forks-shield]][forks-url]\r [![Stargazers][stars-shield]][stars-url]\r [![Issues][issues-shield]][issues-url]\r [![LinkedIn][linkedin-shield]][linkedin-url]",
+  "main": "main.js",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.8.0",
+    "stylelint-scss": "^3.17.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.3.0",
+    "jest": "^26.4.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamclasic/tictactoe-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamclasic/tictactoe-js/issues"
+  },
+  "homepage": "https://github.com/adamclasic/tictactoe-js#readme"
+}
